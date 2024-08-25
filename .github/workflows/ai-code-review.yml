@@ -1,22 +1,19 @@
-name: AI Code Reviewer
+name: PR Review
 
 on:
   pull_request:
-    types:
-      - opened
-      - synchronize
+    types: [opened, synchronize, reopened]
+
+permissions:
+  pull-requests: write
 
 jobs:
   review:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
 
-      - name: AI Code Reviewer
-        uses: freeedcom/ai-codereviewer@main
+    steps:
+      - name: PR Review
+        uses: team-telnyx/reviewpr@main
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
-          exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
+          telnyx_api_key: ${{ secrets.TELNYX_API_KEY }}
+          model_name: 'meta-llama/Meta-Llama-3.1-8B-Instruct'
