@@ -52,7 +52,8 @@ const BlogPage: React.FC = () => {
           <strong>Customize the Exclude Feature:</strong> Customize the exclude option to specify files you don't want to be reviewed.
         </li>
         <li>
-          <strong>Commit Your Changes:</strong> Once you've committed your changes, AI Code Reviewer will be up and running on your next pull request.
+          <strong>Commit Your Changes:</strong> 
+          Once you've committed your changes, AI Code Reviewer will be up and running on your next pull request.
         </li>
       </ol>
       <h2 className="text-2xl font-semibold mb-2">
