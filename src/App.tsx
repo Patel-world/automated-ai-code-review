@@ -1,6 +1,6 @@
 import React from 'react';
-import BlogPage from './components/BlogPage';
 import './index.css'; // Make sure Tailwind CSS is imported
+import BlogPage from './components/blog.page';
 
 const App: React.FC = () => {
   return (
